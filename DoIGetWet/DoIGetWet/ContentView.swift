@@ -21,7 +21,7 @@ struct ContentView: View {
                     .foregroundStyle(Color(.white))
 
                     .frame(width: 200, height:200)
-                    .background(Color(.red))
+                    .background(Color(.red))    //Modifiers wrap previous Content into own Views
             }
         }
     }
