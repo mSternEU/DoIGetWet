@@ -33,24 +33,29 @@ struct ContentView: View {
                         .font(.system(size: 70, weight: .medium))
                         .foregroundStyle(Color.white)
                 }
-                HStack{
+                
+                Spacer()
+                
+                HStack(spacing:22){
                     TagesSpalte(wochentag: "FRI",
                                 imageName: "cloud.sun.fill",
                                 temperature: 12)
                     TagesSpalte(wochentag: "SAT",
-                                imageName: "cloud.sun.fill",
+                                imageName: "tornado",
                                 temperature: 9)
                     TagesSpalte(wochentag: "SUN",
                                 imageName: "cloud.sun.fill",
                                 temperature: 11)
                     TagesSpalte(wochentag: "MON",
-                                imageName: "cloud.sun.fill",
+                                imageName: "thermometer.sun.fill",
                                 temperature: 30)
                     TagesSpalte(wochentag: "TUE",
-                                imageName: "cloud.sun.fill",
+                                imageName: "exclamationmark.triangle",
                                 temperature: 32)
                 }
+                
                 Spacer()
+                
             }
         }
     }
