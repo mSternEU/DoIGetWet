@@ -10,10 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.white, .black]),
-                           startPoint: .topLeading,
-                           endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
+            BackgroundView(topColor: .black, bottomColor: .gray)
             
             VStack(spacing: 8){
                 Text("Lübeck, SH")
@@ -29,7 +26,7 @@ struct ContentView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 180, height: 180, alignment: .center)
-                    Text("11°C")
+                    Text("12°C")
                         .font(.system(size: 70, weight: .medium))
                         .foregroundStyle(Color.white)
                 }
@@ -56,6 +53,18 @@ struct ContentView: View {
                 
                 Spacer()
                 
+                Button{
+                    print("tapped")
+                }
+                label:{
+                    Text("Switch mode")
+                        .frame(width: 280, height: 50)
+                        .background(Color.yellow)
+                        .font(.system(size: 25, weight: .bold, design: .default))
+                        .cornerRadius(10.0)
+                }
+                
+                Spacer()
             }
         }
     }
@@ -85,5 +94,18 @@ struct TagesSpalte: View {
                 .font(.system(size: 20, weight: .medium))
                 .foregroundStyle(Color.white)
         }
+    }
+}
+
+struct BackgroundView: View {
+    
+    var topColor: Color
+    var bottomColor: Color
+    
+    var body: some View {
+        LinearGradient(gradient: Gradient(colors: [topColor, bottomColor]),
+                       startPoint: .topLeading,
+                       endPoint: .bottomTrailing)
+        .edgesIgnoringSafeArea(.all)
     }
 }
